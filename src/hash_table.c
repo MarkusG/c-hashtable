@@ -2,7 +2,7 @@
 #include <string.h>
 #include <math.h>
 
-#include "hash_table.h"
+#include "../include/hash_table.h"
 #include "prime.h"
 
 static ht_item HT_DELETED_ITEM = { NULL, NULL };
