@@ -44,11 +44,11 @@ void ht_del_hash_table(ht_hash_table* ht)
 {
 	for (int i = 0; i < ht->count; i++)
 	{
-		if(ht->items[i])
+		if(ht->items[i] && ht->items[i] != &HT_DELETED_ITEM)
 			ht_del_item(ht->items[i]);
-		free(ht->items);
-		free(ht);
 	}
+	free(ht->items);
+	free(ht);
 }
 
 static int ht_hash(const char* s, const int a, const int m)
